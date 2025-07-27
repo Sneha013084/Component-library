@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import UserProfileCard from "./components/UserProfileCard/UserProfileCard";
+import AlertBox from "./components/AlertBox/AlertBox";
+import './App.css';
+import ProductDisplayCard from "./components/ProductDisplay/ProductDisplay";
+ 
+ export default function App(){
 
-function App() {
-  const [count, setCount] = useState(0)
+   const handleEdit =(id:string) =>{
+      alert (`Editing user ${id}`);
+    }
+    
+   const user = {
+  name: "Sneha Kurian",
+  id :"abc",
+  email: "sneha@gmail.com",
+  role: "Software Engineer",
+  avatarUrl :'https://www.w3schools.com/howto/img_avatar2.png',
+  onEdit: handleEdit,
+  
+};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const handleAddToCart= (ProductId:string) =>{
+  alert(`Product ${ProductId} added to cart!`);
+};
+
+  const product={
+     id: "1",
+  name: " wireless HeadPhone",
+  price: 246,
+  description: "High-quality wireless headphones with noise cancellation.",
+  imageUrl: "https://png.pngtree.com/png-vector/20250321/ourmid/pngtree-wireless-headphone-png-image_15830312.png",
+  inStock: true,
 }
 
-export default App
+  return (
+    <div>
+       <UserProfileCard user ={user}  showEmail ={true} showRole ={true}/>
+      < AlertBox type ="success" message={"Your profile has been updated successfully"}/>
+       <ProductDisplayCard product={product} showDescription ={true} showStockStatus={true} onAddToCart={handleAddToCart}
+       />
+  </div>
+  );
+}
+
+  
+ 
+

@@ -1,15 +1,22 @@
 import React from 'react';
-import  { AlertBoxProps } from '../../types';
+import  { type AlertBoxProps } from '../../types';
 
-export const AlertBox: React.FC<AlertBoxProps> = ({type, message,onClose,children}) =>{
-    // const alertName ={
-    //  sucess: 'You are submitted the profile successfully',
-    //  error: 'Something went wrong',
-    //  warning:'Complete all the fields',
-    //  info:''
 
-    return(
+export default function AlertBox(props: AlertBoxProps){
+  return (
+    <div className='alert-Box'>
+       <p> {props.type.toUpperCase()}: {props.message}</p>
+       {props.onClose && <button onClick={props.onClose}> Close</button>}
+        <p className="text-sm">You can now continue using the application.</p>
 
-    )
+    </div>
+  )
+  }
 
-    }
+
+
+
+
+
+    
+    

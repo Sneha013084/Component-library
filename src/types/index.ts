@@ -3,6 +3,8 @@
 
 export type AlertType ='success' |'error'|'warning'|'info'; // alert type
 
+ //AlertBox
+
 export interface AlertBoxProps{
     type : AlertType;
     message: string;
@@ -11,8 +13,9 @@ export interface AlertBoxProps{
 }
 
 //UserProfileCard component//
-//1. userdata pass to the components//
+
 export interface User {
+    // onEdit: any;
      id : string;
      name: string;
      email : string;
@@ -43,7 +46,7 @@ export interface Product {
 
 export interface ProductDisplayProps {
   product: Product;
-  
+
   showDescription?: boolean;
   showStockStatus?: boolean;
   onAddToCart?: (productId: string) => void;
