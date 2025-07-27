@@ -15,6 +15,7 @@ export interface AlertBoxProps{
 //UserProfileCard component//
 
 export interface User {
+     onEdit: any;
     // onEdit: any;
      id : string;
      name: string;
