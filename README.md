@@ -1,69 +1,58 @@
-# React + TypeScript + Vite
+Resources used : Bryan's office hour's recording helped me to finish this lab and also i referred lessons 2 and 3.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Build reusable React components using TypeScript by using interfaces.
 
-Currently, two official plugins are available:
+An AlertBox component
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A UserProfileCard component
 
-## Expanding the ESLint configuration
+A ProductDisplayCard component
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Type Declarations (types/index.ts)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Define reusable types and interfaces using TypeScript.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+These help in ensuring proper typing of props passed to the components.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## UserProfileCard Component
+ 
+  Displays user info like name, email, and role, with an optional avatar and edit button.
+  
+## AlertBox Component
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Reusable alert component that shows a message with different types (success, error, etc.)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ProductDisplayCard Component
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Displays product info like name, price, description, and stock status with optional Add to Cartlogic.
+
+## App.tsx
+
+I imported three components. And create (AlertBox, UserProfileCard, and productdiaplay card).
+
+Created a handler function that triggers an alert when editing a user.
+
+Created a user object with details to pass as props to the UserProfileCard.
+
+Created a handleAddToCart function to displays an alert when product is added to the cart.
+
+Created a product object with all the necessary fields.
+
+Then I used JSX to render the three components, passing props to each component.
+
+## I was able to display:
+
+User profile card with name ,email and role.
+
+A sucess alert message.
+
+A product display card with image , description, price and stock status and an add to cart button.
+ 
+
+
+
+
+
+
+
+
